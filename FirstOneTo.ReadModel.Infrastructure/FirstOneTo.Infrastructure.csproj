@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6C6D26D-AF52-42BD-B719-F6DA5B78940E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FirstOneTo.ReadModel.Infrastructure</RootNamespace>
+    <AssemblyName>FirstOneTo.ReadModel.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Edm">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.3\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Azure\AzureExampleDatabase.cs" />
+    <Compile Include="Azure\AzureUserDatabase.cs" />
+    <Compile Include="InMemory\InMemoryExampleDatabase.cs" />
+    <Compile Include="IExampleDatabase.cs" />
+    <Compile Include="InMemory\InMemoryUserDatabase.cs" />
+    <Compile Include="IUserUserDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstOneTo.Azure.Entities\FirstOneTo.Azure.Entities.csproj">
+      <Project>{04FB3532-5EF1-4C7F-B54D-846D5837A44A}</Project>
+      <Name>FirstOneTo.Azure.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Domain.Authentication\FirstOneTo.Authentication.csproj">
+      <Project>{8E49964C-7781-4ABF-AFC4-B2CEFE7BA63C}</Project>
+      <Name>FirstOneTo.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Events\FirstOneTo.Events.csproj">
+      <Project>{0A078EDB-0F73-448C-B3E1-8DBAD8F88D53}</Project>
+      <Name>FirstOneTo.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Helpers\FirstOneTo.Helpers.csproj">
+      <Project>{AA9A97D7-CC3C-46AA-A037-FE081EEE0093}</Project>
+      <Name>FirstOneTo.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Models\FirstOneTo.Query.Models.csproj">
+      <Project>{F74B53E7-7C52-413D-8991-DA1CE754D5E9}</Project>
+      <Name>FirstOneTo.Query.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.IdGenerator\KevPOS.IdGenerator.csproj">
+      <Project>{284EA122-C129-4EEF-A3A9-3A2CE6C5725C}</Project>
+      <Name>KevPOS.IdGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.Logging.Infrastructure\KevPOS.Logging.Infrastructure.csproj">
+      <Project>{07C2D256-0501-4B66-8B7E-63B74656D929}</Project>
+      <Name>KevPOS.Logging.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.ValueObjects\KevPOS.ValueObjects.csproj">
+      <Project>{B72B5AD8-D590-4D54-AD37-8007C87BFBB7}</Project>
+      <Name>KevPOS.ValueObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

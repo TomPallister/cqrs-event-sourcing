@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D170CA9-5FB8-4F75-AC38-188CC8FD9331}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FirstOneTo.EventHandlers</RootNamespace>
+    <AssemblyName>FirstOneTo.EventHandlers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleHandlers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstOneTo.Authentication.Service\FirstOneTo.Authentication.Service.csproj">
+      <Project>{3F8DE726-720C-49E2-843D-5155A89F4EC0}</Project>
+      <Name>FirstOneTo.Authentication.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.EmailSender\FirstOneTo.EmailSender.csproj">
+      <Project>{67DAC2A2-59B6-4FC7-AC6D-C2E4F0CF57CC}</Project>
+      <Name>FirstOneTo.EmailSender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Events\FirstOneTo.Events.csproj">
+      <Project>{0A078EDB-0F73-448C-B3E1-8DBAD8F88D53}</Project>
+      <Name>FirstOneTo.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Models\FirstOneTo.Query.Models.csproj">
+      <Project>{F74B53E7-7C52-413D-8991-DA1CE754D5E9}</Project>
+      <Name>FirstOneTo.Query.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Readmodel.Services\FirstOneTo.Query.Services.csproj">
+      <Project>{9BA93241-A825-4421-BEC2-35DC35F1B170}</Project>
+      <Name>FirstOneTo.Query.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.Logging.Infrastructure\KevPOS.Logging.Infrastructure.csproj">
+      <Project>{07C2D256-0501-4B66-8B7E-63B74656D929}</Project>
+      <Name>KevPOS.Logging.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.Messages\KevPOS.Messages.csproj">
+      <Project>{1A9AA7EE-1548-4CBD-9E0C-CB10BBD05D24}</Project>
+      <Name>KevPOS.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.ValueObjects\KevPOS.ValueObjects.csproj">
+      <Project>{B72B5AD8-D590-4D54-AD37-8007C87BFBB7}</Project>
+      <Name>KevPOS.ValueObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CQRSES.Command.Services\CQRSES.Command.Services.csproj">
+      <Project>{8274937F-82D8-4E5E-B8A9-3928F95AE070}</Project>
+      <Name>CQRSES.Command.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

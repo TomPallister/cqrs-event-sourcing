@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73A1C4BA-7960-47C3-B111-472D979BBFD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FirstOneTo.EventsProcessor.Tests</RootNamespace>
+    <AssemblyName>FirstOneTo.EventsProcessor.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Token">
+      <HintPath>..\packages\Nancy.Authentication.Token.1.1\lib\net40\Nancy.Authentication.Token.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstOneTo.Authentication.Service\FirstOneTo.Authentication.Service.csproj">
+      <Project>{3F8DE726-720C-49E2-843D-5155A89F4EC0}</Project>
+      <Name>FirstOneTo.Authentication.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Domain.Authentication\FirstOneTo.Authentication.csproj">
+      <Project>{8E49964C-7781-4ABF-AFC4-B2CEFE7BA63C}</Project>
+      <Name>FirstOneTo.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.EmailSender\FirstOneTo.EmailSender.csproj">
+      <Project>{67DAC2A2-59B6-4FC7-AC6D-C2E4F0CF57CC}</Project>
+      <Name>FirstOneTo.EmailSender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.EventsPublisher\FirstOneTo.EventsPublisher.csproj">
+      <Project>{73F42B42-FF7A-4A51-AA64-B5338D56A7B1}</Project>
+      <Name>FirstOneTo.EventsPublisher</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Events\FirstOneTo.Events.csproj">
+      <Project>{0A078EDB-0F73-448C-B3E1-8DBAD8F88D53}</Project>
+      <Name>FirstOneTo.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Models\FirstOneTo.Query.Models.csproj">
+      <Project>{F74B53E7-7C52-413D-8991-DA1CE754D5E9}</Project>
+      <Name>FirstOneTo.Query.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.ReadModel.Infrastructure\FirstOneTo.Infrastructure.csproj">
+      <Project>{F6C6D26D-AF52-42BD-B719-F6DA5B78940E}</Project>
+      <Name>FirstOneTo.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirstOneTo.Readmodel.Services\FirstOneTo.Query.Services.csproj">
+      <Project>{9BA93241-A825-4421-BEC2-35DC35F1B170}</Project>
+      <Name>FirstOneTo.Query.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.EventsProcessor\KevPOS.EventsProcessor.csproj">
+      <Project>{6CA6F8BC-AA63-4AD8-B1C0-2E7F34FA81C7}</Project>
+      <Name>KevPOS.EventsProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KevPOS.Messages\KevPOS.Messages.csproj">
+      <Project>{1A9AA7EE-1548-4CBD-9E0C-CB10BBD05D24}</Project>
+      <Name>KevPOS.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CQRSES.Command.Services\CQRSES.Command.Services.csproj">
+      <Project>{8274937F-82D8-4E5E-B8A9-3928F95AE070}</Project>
+      <Name>CQRSES.Command.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
